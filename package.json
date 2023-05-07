@@ -1,6 +1,6 @@
 {
   "name": "@dylanintech/flywheel-leaderboard",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "a react component library for creating pretty, dynamic leaderboards",
   "scripts": {
     "rollup": "rollup -c"
