@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import packageJson from "./package.json" assert { type: "json" };
 
 export default [
@@ -21,14 +22,16 @@ export default [
       },
     ],
     plugins: [
+      peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({ tsconfig: "./tsconfig.json", exclude: ["./styles.css"] }),
     ],
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
+    external: ['react', '@tremor/react', 'tailwindcss', /\.css$/],
   },
 ];
