@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "description": "a react component library for creating pretty, dynamic leaderboards",
   "scripts": {
-    "rollup": "rollup -c"
+    "rollup": "rollup -c",
+    "test": "jest"
   },
   "author": "dylan",
   "license": "ISC",
@@ -26,13 +27,11 @@
     "@tremor/react": "^2.4.0",
     "tailwindcss": "^3.3.2"
   },
-
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
     "dist"
   ],
-
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
