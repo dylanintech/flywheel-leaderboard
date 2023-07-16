@@ -4,6 +4,7 @@
 name: Node.js Package
 
 on:
+  workflo_dispatch:
   release:
     types: [created]
 
